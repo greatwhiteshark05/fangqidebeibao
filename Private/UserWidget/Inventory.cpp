@@ -243,7 +243,8 @@ bool UInventory::AddItem3(ACharacter* TopDownCha2, int Amount, UInventorySlot* I
 		else
 		{//直接给背包Add一个有用户空间的物体，也没有意义的，比如CreateWidget过的Add给他，没意义。Slots.Add(newUserWidget)),bu不过加进去后地址倒是一样
 			UClass* SpecificBPClassFromCPlusPlus = LoadClass<UInventorySlot>(NULL, TEXT("/Game/blueprints/Widget/BP_InventorySlot.BP_InventorySlot_C"));
-			Slots.Add(LocalInventorySlot);//(Slots.Add(newUserWidget)
+			//Slots.Add(LocalInventorySlot);//(Slots.Add(newUserWidget)
+			Slots.AddDefaulted();
 			//成功了，必须自己CreateWidget，如果用临时创建的变量CreateWidget然后赋值，那么控件会消失
 			Slots[FoundIndex]=CreateWidget<UInventorySlot>(this, SpecificBPClassFromCPlusPlus);
 			Slots[FoundIndex]->Text=Cast<UTextBlock>(Slots[FoundIndex]->GetWidgetFromName("Text"));
@@ -254,18 +255,18 @@ bool UInventory::AddItem3(ACharacter* TopDownCha2, int Amount, UInventorySlot* I
 			//TCHAR *str=_T ("ShellHWDetection")("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D");
 		//	TCHAR str=*(Slots[FoundIndex]->Icon2dizhi2);
 			Slots[FoundIndex]->Icon2=LoadObject<UTexture2D>(this, *(LocalInventorySlot->Icon2dizhi2), NULL, LOAD_None, NULL);
-			
+			UE_LOG(LogTemp,Error,TEXT("起了怪了不打印啊卧槽卧槽卧槽!1!111%s"), *(LocalInventorySlot->Icon2dizhi2));
 			//??????Slots[FoundIndex]->Icon2=LoadObject<UTexture2D>(this, *(Slots[FoundIndex]->Icon2dizhi2), NULL, LOAD_None, NULL);
 			//IConsoleManager::Get().FindConsoleVariable(*(Slots[FoundIndex]->Icon2dizhi))->GetInt();
-			Slots[FoundIndex]->Icon->SetBrushFromTexture(Slots[FoundIndex]->Icon2,1);
+			//Slots[FoundIndex]->Icon->SetBrushFromTexture(Slots[FoundIndex]->Icon2,1);
 	
 			Slots[FoundIndex]->Amount2=LocalInventorySlot->Amount2;
 		
-		LocalInventorySlot->Icon2=LoadObject<UTexture2D>(NULL, TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"), NULL, LOAD_None, NULL);
+		//LocalInventorySlot->Icon2=LoadObject<UTexture2D>(NULL, TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"), NULL, LOAD_None, NULL);
 	
-			Slots[FoundIndex]->Icon2=LocalInventorySlot->Icon2;
+			//Slots[FoundIndex]->Icon2=LocalInventorySlot->Icon2;
 			//Slots[FoundIndex]->Icon->SetBrushFromTexture(Slots[FoundIndex]->Icon2,1);
-			Slots[FoundIndex]->Icon->SetBrushFromTexture(LocalInventorySlot->Icon2,1);
+			//Slots[FoundIndex]->Icon->SetBrushFromTexture(LocalInventorySlot->Icon2,1);
 			
 			Slots[FoundIndex]->Dutebianhao=LocalInventorySlot->Dutebianhao;
 			Slots[FoundIndex]->Text->SetText(FText::FromString(TEXT("X")+(FString::FormatAsNumber(Slots[FoundIndex]->Amount2))));

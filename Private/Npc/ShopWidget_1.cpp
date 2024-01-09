@@ -19,7 +19,9 @@ void UShopWidget_1::NativeConstruct()
 	//CreateWidget<UOfferItemWidget_1>和SetBrushFromTexture不放在一起就不起效果啊
 	UClass* SpecificBPClassFromCPlusPlus = LoadClass<UOfferItemWidget_1>(this, TEXT("/Game/blueprints/Npc/BP_OfferItemWidget_1.BP_OfferItemWidget_1_C"));
 	OfferItemWidget[0]=CreateWidget<UOfferItemWidget_1>(this, SpecificBPClassFromCPlusPlus);
-	OfferItemWidget[0]->Icon2=LoadObject<UTexture2D>(this, TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"), NULL, LOAD_None, NULL);
+	OfferItemWidget[0]->Icon2dizhi2=FText::FromString(TEXT("/Engine/EngineResources/AICON-Red.AICON-Red")).ToString();;
+	OfferItemWidget[0]->Icon2=LoadObject<UTexture2D>(this, *(OfferItemWidget[0]->Icon2dizhi2), NULL, LOAD_None, NULL);
+	//OfferItemWidget[0]->Icon2=LoadObject<UTexture2D>(this, TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"), NULL, LOAD_None, NULL);
 	OfferItemWidget[0]->Icon->SetBrushFromTexture(OfferItemWidget[0]->Icon2,1);
 	//OfferItemWidget[0]->ItemInfo->Icon2=LoadObject<UTexture2D>(this, TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"), NULL, LOAD_None, NULL);
 	
@@ -67,17 +69,17 @@ void UShopWidget_1::GenerateOfferList()//更新
 	OfferItemWidget[3]->ItemInfo->Dutebianhao=3;
 	OfferItemWidget[4]->ItemInfo->Dutebianhao=4;
 	OfferItemWidget[0]->ItemInfo->Name=FText::FromString(TEXT("武器"));
-	OfferItemWidget[0]->ItemInfo->Icon2=OfferItemWidget[0]->Icon2;
-	OfferItemWidget[0]->ItemInfo->Icon2=LoadObject<UTexture2D>(this, TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"), NULL, LOAD_None, NULL);
+	//OfferItemWidget[0]->ItemInfo->Icon2=OfferItemWidget[0]->Icon2;
+	//OfferItemWidget[0]->ItemInfo->Icon2=LoadObject<UTexture2D>(this, TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"), NULL, LOAD_None, NULL);
 	
 	
 	OfferItemWidget[0]->ItemInfo->Icon2dizhi= FText::FromString(TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"));
 	OfferItemWidget[0]->ItemInfo->Icon2dizhi2=OfferItemWidget[0]->ItemInfo->Icon2dizhi.ToString();
-	
+	OfferItemWidget[1]->ItemInfo->Icon2dizhi2=FText::FromString(TEXT("/Engine/EngineResources/AICON-Red.AICON-Red")).ToString();
 	OfferItemWidget[1]->ItemInfo->Icon2=OfferItemWidget[1]->Icon2;
 	OfferItemWidget[2]->ItemInfo->Icon2=OfferItemWidget[2]->Icon2;
 	OfferItemWidget[3]->ItemInfo->Icon2=OfferItemWidget[3]->Icon2;
-	OfferItemWidget[0]->ItemInfo->Icon->SetBrushFromTexture(OfferItemWidget[0]->Icon2,1);
+	//OfferItemWidget[0]->ItemInfo->Icon->SetBrushFromTexture(OfferItemWidget[0]->Icon2,1);
 	
 	OfferItemWidget[1]->ItemInfo->Icon->SetBrushFromTexture(OfferItemWidget[1]->Icon2,1);
 	OfferItemWidget[2]->ItemInfo->Icon->SetBrushFromTexture(OfferItemWidget[2]->Icon2,1);

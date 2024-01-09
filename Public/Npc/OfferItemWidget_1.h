@@ -24,6 +24,8 @@ public:
 	UButton *BuyButton;
 	UPROPERTY(meta = (BindWidget))
 	UImage *Icon;
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Mantra")
+	FString Icon2dizhi2;
 	UPROPERTY(meta = (BindWidget))
 	UImage *Icon3;
 	UPROPERTY(meta = (BindWidget))
