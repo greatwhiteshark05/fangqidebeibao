@@ -196,7 +196,7 @@ bool UInventory::AddItem(ACharacter *TopDownCha2,int Amount, AMasterItem*Class)
 			Slots[FoundIndex]->Icon = Cast<UImage>(Slots[FoundIndex]->GetWidgetFromName(TEXT("Icon")));
 			Slots[FoundIndex]->Amount2=LocalClass->InventorySlot->Amount2;
 		
-		LocalClass->InventorySlot->Icon2=LoadObject<UTexture2D>(NULL, TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"), NULL, LOAD_None, NULL);
+		//LocalClass->InventorySlot->Icon2=LoadObject<UTexture2D>(NULL, TEXT("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D"), NULL, LOAD_None, NULL);
 	
 			Slots[FoundIndex]->Icon2=LocalClass->InventorySlot->Icon2;
 			Slots[FoundIndex]->Icon->SetBrushFromTexture(Slots[FoundIndex]->Icon2,1);
@@ -255,7 +255,6 @@ bool UInventory::AddItem3(ACharacter* TopDownCha2, int Amount, UInventorySlot* I
 			//TCHAR *str=_T ("ShellHWDetection")("/Game/StarterContent/Textures/T_Brick_Cut_Stone_D.T_Brick_Cut_Stone_D");
 		//	TCHAR str=*(Slots[FoundIndex]->Icon2dizhi2);
 			Slots[FoundIndex]->Icon2=LoadObject<UTexture2D>(this, *(LocalInventorySlot->Icon2dizhi2), NULL, LOAD_None, NULL);
-			UE_LOG(LogTemp,Error,TEXT("起了怪了不打印啊卧槽卧槽卧槽!1!111%s"), *(LocalInventorySlot->Icon2dizhi2));
 			//??????Slots[FoundIndex]->Icon2=LoadObject<UTexture2D>(this, *(Slots[FoundIndex]->Icon2dizhi2), NULL, LOAD_None, NULL);
 			//IConsoleManager::Get().FindConsoleVariable(*(Slots[FoundIndex]->Icon2dizhi))->GetInt();
 			//Slots[FoundIndex]->Icon->SetBrushFromTexture(Slots[FoundIndex]->Icon2,1);
@@ -391,7 +390,7 @@ void UInventory::OnHand(int Index)
 	FName ab=TEXT("Dutebianhao");
 //	UClass* SpecificBPClassFromCPlusPlus=LoadClass<UDataTable>(NULL, TEXT("/Game/blueprints/Widget/Data/DT_MasterDataTable.DT_MasterDataTable_C"));
 //	UDataTable *ab=Cast<UDataTable>(SpecificBPClassFromCPlusPlus);
-	UDataTable *pDataTable = LoadObject<UDataTable>(NULL, UTF8_TO_TCHAR("DataTable'/Game/ceshi/NewDataTable.NewDataTable'"));
+	UDataTable *pDataTable = LoadObject<UDataTable>(NULL, UTF8_TO_TCHAR("DataTable'/Game/blueprints/Widget/Data/NewDataTable.NewDataTable'"));
 	TArray<FString> RowNames;                                  
 	RowNames = UDataTableFunctionLibrary::GetDataTableColumnAsString(pDataTable,ab);
 	FTableRowBase haha;

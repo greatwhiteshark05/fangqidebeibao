@@ -73,12 +73,14 @@ void AriderCharacter::BeginPlay()
 	}
 	
 	InventoryRef->AddToViewport();
+	
 	AGameModeBase* MyGameMode = GetWorld()->GetAuthGameMode();
 	AriderGameMode *asd=Cast<AriderGameMode>(MyGameMode);
 	if (asd)
 	{
 		asd->Danta->AddToViewport();
 	}
+	
 }
 
 void AriderCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

@@ -19,15 +19,15 @@ AMasterItem::AMasterItem()
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bCanEverTick = true;
 	Sphere = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("My Door"));
-	
-	RootComponent=Sphere;
+	Sphere->SetupAttachment(RootComponent);
+	//RootComponent=Sphere;
 	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("My Box2"));
 	SphereComponent->SetupAttachment(Sphere);
 	//不用CreateWidget，直接在UE里选就行了./不得更改InventorySlot类，只能改InventorySlot里的变量
 	InventorySlot =CreateDefaultSubobject<UInventorySlot>(TEXT("我的小垃圾包"));//√，①
 	Name1=FName(TEXT("index_01_r"));
 	PickUpText = CreateDefaultSubobject<UWidgetComponent>(TEXT("PickUpText"));
-	PickUpText->SetupAttachment(RootComponent);
+	PickUpText->SetupAttachment(Sphere);
 	
 }
 

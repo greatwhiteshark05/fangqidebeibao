@@ -60,7 +60,7 @@ void UActionMenu::OnClickedThrowButton()
 		int LocalIndex=Index;
 	FString LocalDutebianhao=UKismetStringLibrary::Conv_Int64ToString(ItemInfo->Dutebianhao);
 	FName ab=TEXT("Dutebianhao");
-	UDataTable *pDataTable = LoadObject<UDataTable>(NULL, UTF8_TO_TCHAR("DataTable'/Game/ceshi/NewDataTable.NewDataTable'"));
+	UDataTable *pDataTable = LoadObject<UDataTable>(NULL, UTF8_TO_TCHAR("DataTable'/Game/blueprints/Widget/Data/NewDataTable.NewDataTable'"));
 	TArray<FString> RowNames;                                  
 	RowNames = UDataTableFunctionLibrary::GetDataTableColumnAsString(pDataTable,ab);
 	FTableRowBase haha;
